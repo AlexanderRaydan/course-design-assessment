@@ -23,7 +23,7 @@ class CourseServiceImpl(CourseService):
     return filtered_model[0]
   
 
-  def find_last_id(self, model: str):
+  def find_last_id(self, model: str) -> int:
     """
     Return last model id from model DATA 
     """
@@ -38,7 +38,7 @@ class CourseServiceImpl(CourseService):
     return self.check_id(course_id, COURSES)
 
 
-  def create_course(self, course_name):
+  def create_course(self, course_name) -> Course:
     """
     Creates a new course.
     """
@@ -48,7 +48,7 @@ class CourseServiceImpl(CourseService):
 
     return new_course
 
-  def delete_course(self, course_id):
+  def delete_course(self, course_id) -> Course:
     """
     Deletes a course by its id.
     """
@@ -62,7 +62,7 @@ class CourseServiceImpl(CourseService):
     return course
     
 
-  def create_assignment(self, course_id, assignment_name):
+  def create_assignment(self, course_id, assignment_name) -> Assessment:
     """
     Creates a new assignment for a course.
     """
@@ -77,7 +77,7 @@ class CourseServiceImpl(CourseService):
 
     return new_assessment
 
-  def enroll_student(self, course_id, student_id):
+  def enroll_student(self, course_id, student_id) -> Enroll:
     """
     Enrolls a student in a course.
     """
@@ -97,7 +97,7 @@ class CourseServiceImpl(CourseService):
 
     return new_enroll
 
-  def dropout_student(self, course_id, student_id):
+  def dropout_student(self, course_id, student_id) -> Enroll:
     """
     Drops a student from a course.
     """
@@ -121,7 +121,7 @@ class CourseServiceImpl(CourseService):
     return enroll[0]
 
 
-  def submit_assignment(self, course_id, student_id, assignment_id, grade: int):
+  def submit_assignment(self, course_id, student_id, assignment_id, grade: int) -> Grade:
     """
     Submits an assignment for a student. A grade of an assignment will be an integer between 0 and 100 inclusive.
     """

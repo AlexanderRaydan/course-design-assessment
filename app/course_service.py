@@ -13,14 +13,14 @@ class CourseService(ABC):
     pass
   
   @abstractmethod
-  def check_id(self, id: int, model: str):
+  def check_id(self, id: int, model: str) -> int:
     """
     Return model object if id exist, else return None
     """
     pass
   
 
-  def find_last_id(self, model: str):
+  def find_last_id(self, model: str) -> int:
     """
     Return last model id from model DATA 
     """
